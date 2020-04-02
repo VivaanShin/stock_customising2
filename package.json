@@ -1,0 +1,24 @@
+{
+  "name": "stock-custormising2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "supervisor ./bin/www"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "charset": "^1.0.1",
+    "cheerio": "^1.0.0-rc.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "iconv-lite": "^0.5.1",
+    "install": "^0.13.0",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2",
+    "supervisor": "^0.12.0"
+  }
+}

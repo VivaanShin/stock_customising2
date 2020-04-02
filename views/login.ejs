@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title><%= title%></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>개인맞춤형 주식 알림 시스템</h1>
+  <h1>로그인 페이지</h1>
+  <form action="/login" method="post" name="frm_login" id="frm_login">
+    <input type="text" name="username" id="username"/>
+    <input type="password" name="password" id="password"/>
+    <input type="submit" value="Login" />
+  </form>
+
+  <br /><br />
+  <h2>이전화면으로 돌아가시겠습니까?</h2>
+  <form action="/" method="get">
+    <div><input type="submit" value="이전화면"></div>
+</body>
+
+</html>

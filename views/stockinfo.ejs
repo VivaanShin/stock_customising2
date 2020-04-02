@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='stylesheets/style.css' />
+  <style>
+    .stockinfo {
+      width: 300px;
+    }
+
+    .stockinfo th {
+      font-weight: bolder;
+      color: #4D5B67;
+      background-color: #BDBEC0;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      vertical-align: top;
+    }
+
+    .sameindustry {
+      width: 800px;
+    }
+
+    .sameindustry th {
+      font-weight: bolder;
+      color: #4D5B67;
+      background-color: #BDBEC0;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      vertical-align: top;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #bcbcbc;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>주식 코드 조회 결과</h1>
+  <table class="stockinfo">
+    <thead>
+      <tr>
+        <th>
+          종목명
+        </th>
+        <th>
+          <%= s_name%>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>
+          현재가
+        </th>
+        <td>
+          <%= s_price%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          전일가
+        </th>
+        <td>
+          <%= s_yesterday%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          고가
+        </th>
+        <td>
+          <%= s_highvalue%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          저가
+        </th>
+        <td>
+          <%= s_lowvalue%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          시초가
+        </th>
+        <td>
+          <%= s_startvalue%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          거래량
+        </th>
+        <td>
+          <%= s_volume%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          거래대금
+        </th>
+        <td>
+          <%= s_volumevalue%>(단위:백만)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br /><br />
+  <h1>동일업종 안내</h1>
+  <table class="sameindustry">
+    <thead>
+      <tr>
+        <th>
+          종목명
+        </th>
+        <th>
+          <%= si_name[0]%>
+        </th>
+        <th>
+          <%= si_name[1]%>
+        </th>
+        <th>
+          <%= si_name[2]%>
+        </th>
+        <th>
+          <%= si_name[3]%>
+        </th>
+        <th>
+          <%= si_name[4]%>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          종목코드
+        </th>
+        <th>
+          <%= si_code[0]%>
+        </th>
+        <th>
+          <%= si_code[1]%>
+        </th>
+        <th>
+          <%= si_code[2]%>
+        </th>
+        <th>
+          <%= si_code[3]%>
+        </th>
+        <th>
+          <%= si_code[4]%>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>
+          현재가
+        </th>
+        <td>
+          <%= si_price[0]%>
+        </td>
+        <td>
+          <%= si_price[2]%>
+        </td>
+        <td>
+          <%= si_price[2]%>
+        </td>
+        <td>
+          <%= si_price[3]%>
+        </td>
+        <td>
+          <%= si_price[4]%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          전일대비
+        </th>
+        <td>
+          <%= si_daytoday[0]%>
+        </td>
+        <td>
+          <%= si_daytoday[1]%>
+        </td>
+        <td>
+          <%= si_daytoday[2]%>
+        </td>
+        <td>
+          <%= si_daytoday[3]%>
+        </td>
+        <td>
+          <%= si_daytoday[4]%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          등락률
+        </th>
+        <td>
+          <%= si_evenrate[0]%>
+        </td>
+        <td>
+          <%= si_evenrate[1]%>
+        </td>
+        <td>
+          <%= si_evenrate[2]%>
+        </td>
+        <td>
+          <%= si_evenrate[3]%>
+        </td>
+        <td>
+          <%= si_evenrate[4]%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          시가총액
+        </th>
+        <td>
+          <%= si_marketvalue[0]%>
+        </td>
+        <td>
+          <%= si_marketvalue[1]%>
+        </td>
+        <td>
+          <%= si_marketvalue[2]%>
+        </td>
+        <td>
+          <%= si_marketvalue[3]%>
+        </td>
+        <td>
+          <%= si_marketvalue[4]%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          외국인취득률
+        </th>
+        <td>
+          <%= si_foreignrate[0]%>
+        </td>
+        <td>
+          <%= si_foreignrate[1]%>
+        </td>
+        <td>
+          <%= si_foreignrate[2]%>
+        </td>
+        <td>
+          <%= si_foreignrate[3]%>
+        </td>
+        <td>
+          <%= si_foreignrate[4]%>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h1>종목 관련 뉴스</h1>
+  <% for (var i = 0; i < len_news; i++){ %>
+  <li><a onclick="window.open('<%= news[i].news_url %>')"  >
+    <%= news[i].news_title %>
+  </a></li>
+  <% } %>
+
+  <h1>1주일 차트</h1>
+  <img id="img_chart_area" src="<%= weekchart %>" width="700" height="300"/>
+
+  <br />
+  <h1>외국인 매매동향 차트(1개월)</h1>
+  <img id="img_foreign_chart" src="<%= foreign_chart %>" width="291" height="203"/>
+
+  <br />
+  <h1>기관 매매동향 차트(1개월)</h1>
+  <img id="img_organ_chart" src="<%= organ_chart %>" width="291" height="203"/>
+</body>
+
+</html>

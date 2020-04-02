@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title%></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>개인맞춤형 주식 알림 시스템</h1>
+    <br>
+    <h2><%= user_id %>님 환영합니다.</h2><br />
+    <h2>회원 관심 종목</h2>
+    <ol>
+      <li>종목이름: <%= sname %> 종목코드: <%= scode %></li>
+      <li>종목이름: <%= sname %> 종목코드: <%= scode %></li>
+    </ol>
+    <br>
+    <h2>종목코드 추가</h2>
+    <form action="/stockinfo" method="post">
+      <div>종목코드 <br/><input type="text" name="stock_code" value=""></div><br/>
+      <br/>
+      <div><input type="submit" value="Submit"></div>
+  </body>
+</html>
