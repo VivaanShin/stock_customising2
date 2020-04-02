@@ -63,14 +63,21 @@ router.post('/', function(req, res) {
             }else{
               var len_results = results.length;
               console.log("results 길이", len_results);
+              var user_stock_data = new Array();
 
-              var sname = results[0].SNAME;
-              var scode = results[0].SCODE;
+              for (i=0; i<len_results; i++){
+                user_stock_data[i] = {
+                  sname : results[i].SNAME,
+                  scode : results[i].SCODE
+                };
+              };
+              console.log("user_stock_data",user_stock_data);
+              console.log("user_stock_data[0]",user_stock_data[0]);
+              console.log("user_stock_data[1]",user_stock_data[1]);
               return res.render('main', {
                 title: '메인 화면',
                 user_id: id,
-                sname: sname,
-                scode: scode,
+                user_stock_data: user_stock_data,
                 len_results: len_results
               });
             }

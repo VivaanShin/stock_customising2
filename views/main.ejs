@@ -10,10 +10,14 @@
     <br>
     <h2><%= user_id %>님 환영합니다.</h2><br />
     <h2>회원 관심 종목</h2>
-    <ol>
-      <li>종목이름: <%= sname %> 종목코드: <%= scode %></li>
-      <li>종목이름: <%= sname %> 종목코드: <%= scode %></li>
-    </ol>
+
+    <h1>종목 정보</h1>
+    <% for (var i = 0; i < len_results; i++){ %>
+    <li>
+      <%= user_stock_data[i].sname %> <%= user_stock_data[i].scode %>
+    </li>
+    <% } %>
+
     <br>
     <h2>종목코드 추가</h2>
     <form action="/stockinfo" method="post">

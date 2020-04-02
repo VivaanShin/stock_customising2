@@ -41,6 +41,13 @@
 </head>
 
 <body>
+  <input type="button" id="button1" onclick="button1_click();" value="관심 종목 추가" />
+  <script>
+    function button1_click() {
+      alert("관심 종목으로 추가되었습니다.");
+    }
+  </script>
+
   <h1>주식 코드 조회 결과</h1>
   <table class="stockinfo">
     <thead>
@@ -264,21 +271,21 @@
   <br />
   <h1>종목 관련 뉴스</h1>
   <% for (var i = 0; i < len_news; i++){ %>
-  <li><a onclick="window.open('<%= news[i].news_url %>')"  >
-    <%= news[i].news_title %>
-  </a></li>
+  <li><a onclick="window.open('<%= news[i].news_url %>')">
+      <%= news[i].news_title %>
+    </a></li>
   <% } %>
 
   <h1>1주일 차트</h1>
-  <img id="img_chart_area" src="<%= weekchart %>" width="700" height="300"/>
+  <img id="img_chart_area" src="<%= weekchart %>" width="700" height="300" />
 
   <br />
   <h1>외국인 매매동향 차트(1개월)</h1>
-  <img id="img_foreign_chart" src="<%= foreign_chart %>" width="291" height="203"/>
+  <img id="img_foreign_chart" src="<%= foreign_chart %>" width="291" height="203" />
 
   <br />
   <h1>기관 매매동향 차트(1개월)</h1>
-  <img id="img_organ_chart" src="<%= organ_chart %>" width="291" height="203"/>
+  <img id="img_organ_chart" src="<%= organ_chart %>" width="291" height="203" />
 </body>
 
 </html>
